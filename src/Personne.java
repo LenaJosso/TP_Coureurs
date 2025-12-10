@@ -36,5 +36,8 @@ public class Personne {
         this.genre = genre;
     }
 
-
+    @Override
+    public String toString() {
+        return getNom() + " " + getPrenom() + " " + getGenre() + "\n";
+    }
 }

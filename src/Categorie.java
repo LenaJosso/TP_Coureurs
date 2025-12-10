@@ -8,10 +8,7 @@ public enum Categorie {
     M7,
     M8,
     M9,
-    Elite1,
-    Elite2,
-    ;
+    ELITE_1,
+    ELITE_2,
 
-    Categorie() {
-    }
 }

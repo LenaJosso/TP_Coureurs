@@ -33,7 +33,10 @@ public class Coureur extends Personne {
         this.temps = temps;
         this.categorie = categorie;
     }
-
+@Override
+    public String toString() {
+        return getNom() + " " + getPrenom() + " " + getGenre() + " " + getTemps() + " " + getCategorie() + "\n";
+}
 
 
 }
