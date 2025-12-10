@@ -7,8 +7,8 @@ public class Coureur extends Personne {
     public Coureur() {
     }
 
-    public Coureur(String nom, String prenom, Genre genre, LocalTime temps, Categorie categorie) {
-        super(nom, prenom, genre);
+    public Coureur(int numero, String nom, String prenom, Genre genre, LocalTime temps, Categorie categorie) {
+        super(numero, nom, prenom, genre);
         this.temps = temps;
         this.categorie = categorie;
     }
@@ -35,7 +35,7 @@ public class Coureur extends Personne {
     }
 @Override
     public String toString() {
-        return getNom() + " " + getPrenom() + " " + getGenre() + " " + getTemps() + " " + getCategorie() + "\n";
+        return getNom() + " " + getPrenom() + " " + getGenre() + " " +  getCategorie() + " " + getTemps() + "\n";
 }
 
 

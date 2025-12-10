@@ -1,12 +1,22 @@
 public class Personne {
+    int numero;
     String nom;
     String prenom;
     Genre genre;
 
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
     public Personne() {
     }
 
-    public Personne(String nom, String prenom, Genre genre) {
+    public Personne(int numero, String nom, String prenom, Genre genre) {
+        this.numero = numero;
         this.nom = nom;
         this.prenom = prenom;
         this.genre = genre;
