@@ -7,8 +7,8 @@ public class Coureur extends Personne {
     public Coureur() {
     }
 
-    public Coureur(int numero, String nom, String prenom, Genre genre, LocalTime temps, Categorie categorie) {
-        super(numero, nom, prenom, genre);
+    public Coureur(String nom, String prenom, Genre genre, LocalTime temps, Categorie categorie) {
+        super(nom, prenom, genre);
         this.temps = temps;
         this.categorie = categorie;
     }
