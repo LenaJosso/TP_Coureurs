@@ -14,7 +14,7 @@ public class Ihm {
 
             int valeur;
             System.out.println(ANSI_GREEN_BOLD +" --> Les participants à la course <--"+ ANSI_RESET);
-                    
+
             System.out.println( """
                     1 : Lister par ordre croissant du nom
                     2 : Lister par ordre decroissant du nom
@@ -80,7 +80,10 @@ public class Ihm {
                         break;
 
                     case 10:
-
+                        System.out.println("Quel numéro voulez vous supprimer (selon la liste de base) ?");
+                        int numero = In.readInteger();
+                        laCourse.SupprimerUnCoureur(numero);
+                        affichage(laCourse);
                         break;
 
                     case 11 :

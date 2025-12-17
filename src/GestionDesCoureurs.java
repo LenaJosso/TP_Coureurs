@@ -1,3 +1,4 @@
+import clavier.In;
 import org.w3c.dom.ls.LSOutput;
 
 import java.io.BufferedReader;
@@ -99,13 +100,37 @@ public class GestionDesCoureurs {
         listeDesCoureurs.sort(Comparator.comparing(Coureur :: getTemps).reversed());
     }
 
-    /* /**
-     * Trier la liste par nom croissant
-     *
-     * @param coureur
-     * @return un ajout d'utlisateur */
-    public void AjouterUnCoureur (Coureur coureur){
-        //coureur.add
+
+    public void ModifierUnCoureur (int valeur2, String prenom, Genre genre){
+        do {
+            System.out.println("Que voulez vous changer ?");
+            System.out.println( """
+                    1 : Le nom
+                    2 : Le prenom
+                    3 : La categorie
+                    4 : Le temps
+                    5 : Le genre
+                    6 : Fin de la modification
+                    """ );
+
+            valeur2 = In.readInteger();
+            switch (valeur2) {
+                case 1:
+
+                    break;
+                case 2:
+                    break;
+                case 3:
+                    break;
+                case 4:
+                    break;
+                case 5:
+                    break;
+                case 6:
+                    System.out.println("Fin de la modification");
+                    break;
+            }
+        } while (valeur2 != 6);
     }
 
 
@@ -113,8 +138,8 @@ public class GestionDesCoureurs {
      * Trier la liste par nom croissant
      *
      * @return Supprime un coureur à la ligne demande */
-    public void SupprimerUnCoureur (){
-
+    public void SupprimerUnCoureur (int numero){
+        listeDesCoureurs.remove(numero-1);
     }
 
 
