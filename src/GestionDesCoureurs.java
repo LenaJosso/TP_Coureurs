@@ -1,8 +1,7 @@
 import clavier.In;
 import org.w3c.dom.ls.LSOutput;
 
-import java.io.BufferedReader;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.Path;
@@ -12,6 +11,11 @@ import java.util.Comparator;
 
 public class GestionDesCoureurs {
     ArrayList<Coureur> listeDesCoureurs = new ArrayList();
+
+    /**
+     * Permet de lire le fichier texte et de "l'implanter" dans une array list
+     * @throws IOException
+     */
     public void lectureFichier() throws IOException {
         Path chemin = Paths.get("course.txt");
         BufferedReader lecture = Files.newBufferedReader(chemin);
@@ -101,36 +105,8 @@ public class GestionDesCoureurs {
     }
 
 
-    public void ModifierUnCoureur (int valeur2, String prenom, Genre genre){
-        do {
-            System.out.println("Que voulez vous changer ?");
-            System.out.println( """
-                    1 : Le nom
-                    2 : Le prenom
-                    3 : La categorie
-                    4 : Le temps
-                    5 : Le genre
-                    6 : Fin de la modification
-                    """ );
+    public void ModifierUnCoureur (int numero2){
 
-            valeur2 = In.readInteger();
-            switch (valeur2) {
-                case 1:
-
-                    break;
-                case 2:
-                    break;
-                case 3:
-                    break;
-                case 4:
-                    break;
-                case 5:
-                    break;
-                case 6:
-                    System.out.println("Fin de la modification");
-                    break;
-            }
-        } while (valeur2 != 6);
     }
 
 
@@ -141,6 +117,32 @@ public class GestionDesCoureurs {
     public void SupprimerUnCoureur (int numero){
         listeDesCoureurs.remove(numero-1);
     }
+
+    /**
+     * Permet de sauvegarder la liste
+     * @throws IOException
+     *
+     */
+    public void SauvegargerCoureur() throws IOException {
+        BufferedWriter writer = new BufferedWriter(new FileWriter("courseFinal.txt"));
+        for (Coureur coureur : listeDesCoureurs ) {
+            writer.write(coureur.getGenre() + ", " + coureur.getNom() + ", " + coureur.getPrenom() + ", " + coureur.getCategorie() + ", " + coureur.getTemps());
+            writer.newLine();
+        }
+        writer.close();
+    }
+// Je n'ai pas réussi à finir le binaire mais je le laisse en commentaire
+//    private static final Path path = Paths.get("course.bin");
+//
+//    private void lectureFichierBinaire() throws IOException, ClassNotFoundException {
+//        ObjectInputStream ois = new ObjectInputStream(Files.newInputStream(path));
+//        if (Files.exists(path)) {
+//            do {
+//                Coureur coureur = (Coureur) ois.readObject();
+//                listeDesCoureurs.add(coureur);
+//            } while (true);
+//        }
+//    }
 
 
     public ArrayList<Coureur> getListeDesCoureurs() {
